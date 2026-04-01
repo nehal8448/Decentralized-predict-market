@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --algo-teal: #0083A8;
+  --algo-teal-bright: #00A8D4;
+  --algo-teal-glow: rgba(0, 131, 168, 0.25);
+  --algo-teal-subtle: rgba(0, 131, 168, 0.1);
+
+  --bg-primary: #0A0D14;
+  --bg-secondary: #0F1320;
+  --bg-tertiary: #141825;
+  --bg-card: #181D2E;
+  --bg-card-hover: #1E2438;
+  --bg-elevated: #1C2235;
+  --bg-input: #111624;
+
+  --border-primary: #1E2A3A;
+  --border-secondary: #243040;
+  --border-accent: rgba(0, 131, 168, 0.35);
+
+  --text-primary: #E8EDF5;
+  --text-secondary: #7B8BA0;
+  --text-muted: #4A5568;
+  --text-accent: #00B4D8;
+
+  --green: #00D9A5;
+  --green-subtle: rgba(0, 217, 165, 0.12);
+  --red: #FF4C6A;
+  --red-subtle: rgba(255, 76, 106, 0.12);
+  --yellow: #F5A623;
+  --yellow-subtle: rgba(245, 166, 35, 0.12);
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(0, 131, 168, 0.2);
+  --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--algo-teal);
+}
+
+/* Utility */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-green { color: var(--green); }
+.text-red { color: var(--red); }
+.text-accent { color: var(--text-accent); }
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px var(--algo-teal-glow); }
+  50% { box-shadow: 0 0 20px rgba(0, 131, 168, 0.5), 0 0 40px rgba(0, 131, 168, 0.2); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes orderbook-flash-green {
+  0% { background-color: transparent; }
+  30% { background-color: rgba(0, 217, 165, 0.18); }
+  100% { background-color: transparent; }
+}
+
+@keyframes orderbook-flash-red {
+  0% { background-color: transparent; }
+  30% { background-color: rgba(255, 76, 106, 0.18); }
+  100% { background-color: transparent; }
+}

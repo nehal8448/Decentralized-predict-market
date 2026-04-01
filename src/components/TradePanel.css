@@ -1,0 +1,334 @@
+.trade-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.trade-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-elevated);
+  flex-shrink: 0;
+}
+
+.trade-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+}
+
+.trade-pair {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* YES/NO Toggle */
+.side-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 12px 12px 0;
+}
+
+.side-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  border: 1.5px solid var(--border-primary);
+  background: var(--bg-input);
+  color: var(--text-secondary);
+}
+
+.side-price {
+  font-size: 10.5px;
+  font-family: 'JetBrains Mono', monospace;
+  opacity: 0.8;
+}
+
+.side-btn.yes:hover,
+.side-btn.yes.active {
+  background: var(--green-subtle);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.side-btn.no:hover,
+.side-btn.no.active {
+  background: var(--red-subtle);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* Order Type */
+.order-type-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 10px 12px 0;
+}
+
+.order-type-tab {
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+
+.order-type-tab.active {
+  background: var(--algo-teal-subtle);
+  border-color: var(--border-accent);
+  color: var(--text-accent);
+}
+
+.order-type-tab:hover {
+  color: var(--text-primary);
+}
+
+/* Form */
+.trade-form {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-hint {
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 9px 46px 9px 12px;
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder { color: var(--text-muted); }
+
+.form-input:focus {
+  border-color: var(--algo-teal);
+  box-shadow: 0 0 0 3px var(--algo-teal-subtle);
+}
+
+/* Remove number input arrows */
+.form-input::-webkit-inner-spin-button,
+.form-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-suffix {
+  position: absolute;
+  right: 10px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Presets */
+.preset-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.preset-btn {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 5px;
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 2px;
+  transition: all 0.15s;
+}
+
+.preset-btn:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border-secondary);
+  color: var(--text-primary);
+}
+
+.preset-btn.max {
+  color: var(--algo-teal);
+  border-color: var(--border-accent);
+}
+
+/* Slippage */
+.slippage-row {
+  display: flex;
+  gap: 4px;
+}
+
+.slippage-btn {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 5px;
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 5px 2px;
+  transition: all 0.15s;
+}
+
+.slippage-btn.active {
+  background: var(--algo-teal-subtle);
+  border-color: var(--border-accent);
+  color: var(--algo-teal);
+}
+
+.slippage-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-secondary);
+}
+
+/* Summary */
+.trade-summary {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+}
+
+.summary-row span:first-child {
+  color: var(--text-muted);
+}
+
+.summary-row span:last-child {
+  color: var(--text-secondary);
+}
+
+/* Warning */
+.trade-warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--yellow-subtle);
+  border: 1px solid rgba(245, 166, 35, 0.25);
+  border-radius: 7px;
+  font-size: 11px;
+  color: var(--yellow);
+}
+
+/* Submit Button */
+.trade-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.trade-submit.yes {
+  background: linear-gradient(135deg, #00A87B, var(--green));
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(0, 217, 165, 0.3);
+}
+
+.trade-submit.yes:hover:not(.disabled) {
+  box-shadow: 0 6px 24px rgba(0, 217, 165, 0.5);
+  transform: translateY(-1px);
+}
+
+.trade-submit.no {
+  background: linear-gradient(135deg, #CC1F3C, var(--red));
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(255, 76, 106, 0.3);
+}
+
+.trade-submit.no:hover:not(.disabled) {
+  box-shadow: 0 6px 24px rgba(255, 76, 106, 0.5);
+  transform: translateY(-1px);
+}
+
+.trade-submit.success {
+  background: linear-gradient(135deg, #0083A8, #00B4D8) !important;
+  box-shadow: 0 4px 20px rgba(0,131,168,0.4) !important;
+}
+
+.trade-submit.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Disclaimer */
+.trade-disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 10px;
+  color: var(--text-muted);
+  padding: 0 4px;
+}
